@@ -1,0 +1,45 @@
+{
+  "success": true,
+  "data": [{
+    "id": 1,
+    "slug": "c5580cc1c3f4",
+    "nickname": "董克平日记",
+    "avatar_source": "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+    "total_likes_count": 4300,
+    "total_wordage": 1049100,
+    "is_following_user": false
+  }, {
+    "id": 2,
+    "slug": "55b597320c4e",
+    "nickname": "乔汉童",
+    "avatar_source": "https://upload.jianshu.io/users/upload_avatars/5796592/73837104-47e5-4fe9-a5be-054bd50b06f7.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+    "total_likes_count": 2000,
+    "total_wordage": 365700,
+    "is_following_user": false
+  }, {
+    "id": 3,
+    "slug": "080bb4eac1c9",
+    "nickname": "名贵的考拉熊",
+    "avatar_source": "https://upload.jianshu.io/users/upload_avatars/7663825/7c28763e-002b-4e89-8dea-5b8da210ef2c.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+    "total_likes_count": 19500,
+    "total_wordage": 267700,
+    "is_following_user": false
+  }, {
+    "id": 4,
+    "slug": "83b1ab6d703e",
+    "nickname": "没文化的野狐狸",
+    "avatar_source": "https://upload.jianshu.io/users/upload_avatars/6652326/ba6106f4-20eb-4735-885d-561083bd4e55.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+    "total_likes_count": 6100,
+    "total_wordage": 306700,
+    "is_following_user": false
+  }, {
+    "id": 5,
+    "slug": "86b81ed8e35c",
+    "nickname": "邓哲",
+    "avatar_source": "https://upload.jianshu.io/users/upload_avatars/278/0778727c-c557-4ffb-929c-6ee182a58145.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+    "total_likes_count": 1400,
+    "total_wordage": 433900,
+    "is_following_user": false
+  }],
+  "total_count": 2788
+}

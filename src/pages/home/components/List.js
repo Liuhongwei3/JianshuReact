@@ -1,0 +1,51 @@
+import React, {PureComponent} from 'react';
+import {ListItem, ListInfo, LoadMore} from '../style';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {getArticles, loadMore} from "../action";
+
+class List extends PureComponent {
+  componentDidMount() {
+    this.props.getArticleList();
+  }
+
+  render() {
+    const {list, getMoreList, page} = this.props;
+    return (
+        <div>
+          {
+            list.map((item, index) => {
+              return (
+                  <Link key={index} to={'/detail/' + item.get('id')}>
+                    <ListItem>
+                      <img alt='' className='pic' src={item.get('imgUrl')}/>
+                      <ListInfo>
+                        <h3 className='title'>{item.get('title')}</h3>
+                        <p className='desc'>{item.get('desc')}</p>
+                      </ListInfo>
+                    </ListItem>
+                  </Link>
+              );
+            })
+          }
+          <LoadMore onClick={() => getMoreList(page)}>更多文字</LoadMore>
+        </div>
+    )
+  }
+}
+
+const mapState = (state) => ({
+  list: state.home.get('articleList'),
+  page: state.home.get('articlePage')
+});
+
+const mapDispatch = (dispatch) => ({
+  getArticleList(){
+    dispatch(getArticles())
+  },
+  getMoreList(page) {
+    dispatch(loadMore(page));
+  }
+})
+
+export default connect(mapState, mapDispatch)(List);

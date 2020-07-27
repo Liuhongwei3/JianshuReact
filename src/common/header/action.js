@@ -32,8 +32,7 @@ const changList = data => ({
 
 export const getList = () => {
   return dispatch => {
-    axios
-        .get("/api/headerList.json")
+    axios.get("/api/headerList.json")
         .then(res => {
           const {data: {data}} = res;
           dispatch(changList(data));

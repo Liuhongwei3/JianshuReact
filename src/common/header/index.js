@@ -44,9 +44,15 @@ const Header = props => {
       <HeaderStyle>
         <Logo/>
         <Nav>
-          <NavItem className="left active">首页</NavItem>
-          <NavItem className="left">下载App</NavItem>
-          <NavItem className="right">登录</NavItem>
+          <Link to="/">
+            <NavItem className="left active">首页</NavItem>
+          </Link>
+          <a href="https://www.jianshu.com/apps?utm_medium=desktop&utm_source=navbar-apps">
+            <NavItem className="left">下载App</NavItem>
+          </a>
+          <Link to="/login">
+            <NavItem className="right">登录</NavItem>
+          </Link>
           <NavItem className="right">Aa</NavItem>
           <SearchWrapper>
             <NavSearch
