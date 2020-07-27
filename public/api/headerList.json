@@ -1,0 +1,19 @@
+{
+  "data": [
+    "JavaScript",
+    "Vue",
+    "React",
+    "Tadm",
+    "Web",
+    "Webpack",
+    "Node",
+    "Vue-Router",
+    "Vuex",
+    "axios",
+    "redux",
+    "react-redux",
+    "redux-thunk",
+    "redux-saga",
+    "react-native"
+  ]
+}
