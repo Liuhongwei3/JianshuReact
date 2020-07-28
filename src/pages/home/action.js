@@ -27,7 +27,7 @@ const loadAction = (data) => ({
 
 export const getTopic = () => {
   return (dispatch) => {
-    axios.get('/api/topics.json')
+    axios.get('./api/topics.json')
         .then((res) => {
           const {data: {data}} = res;
           dispatch(topicAction(data));
@@ -38,7 +38,7 @@ export const getTopic = () => {
 
 export const getArticles = () => {
   return (dispatch) => {
-    axios.get('/api/articles.json')
+    axios.get('./api/articles.json')
         .then((res) => {
           const {data: {data}} = res;
           dispatch(articleAction(data));
@@ -49,7 +49,7 @@ export const getArticles = () => {
 
 export const getRecommends = () => {
   return (dispatch) => {
-    axios.get('/api/recommends.json')
+    axios.get('./api/recommends.json')
         .then((res) => {
           const {data: {data}} = res;
           dispatch(recommendAction(data));
@@ -60,7 +60,7 @@ export const getRecommends = () => {
 
 export const getWriters = () => {
   return (dispatch) => {
-    axios.get('/api/writers.json')
+    axios.get('./api/writers.json')
         .then((res) => {
           const {data: {data}} = res;
           dispatch(writerAction(data));
@@ -71,7 +71,7 @@ export const getWriters = () => {
 
 export const loadMore = () => {
   return (dispatch) => {
-    axios.get('/api/articles.json')
+    axios.get('./api/articles.json')
         .then((res) => {
           const {data: {data}} = res;
           dispatch(loadAction(data));

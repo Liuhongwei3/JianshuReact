@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
+import {message} from "antd";
 import {
   HeaderStyle, Logo, Nav, NavItem,
   NavSearch, Addtion, Button, SearchWrapper, SearchInfo,
@@ -8,11 +9,12 @@ import {
   SearchInfoList
 } from "./style";
 import {getList, searchBlur, searchFocus, onMouseEnter, onMouseLeave, changePage} from "./action";
+import {logoutAccount} from "../../pages/login/action";
 
 const Header = props => {
   const {
     focused, list, handleInputFocus, handleInputBlur, page, totalPage, onMouseEnter,
-    onMouseLeave, mouseEnter, getPageList
+    onMouseLeave, mouseEnter, getPageList,loginStatus,loginOut
   } = props;
   //  此时 list 为 immutable 我们不能直接操作，所以需要转换成原生 JS 即可通过属性方式访问
   const newList = list.toJS();
@@ -40,6 +42,19 @@ const Header = props => {
       return null;
     }
   }
+  let renderLogin = () => (
+      loginStatus ?
+          (
+              <Link to='/' onClick={loginOut}>
+                <NavItem className='right'>退出</NavItem>
+              </Link>
+          ) :
+          (
+              <Link to='/login'>
+                <NavItem className='right'>登录</NavItem>
+              </Link>
+          )
+  )
   return (
       <HeaderStyle>
         <Logo/>
@@ -50,9 +65,10 @@ const Header = props => {
           <a href="https://www.jianshu.com/apps?utm_medium=desktop&utm_source=navbar-apps">
             <NavItem className="left">下载App</NavItem>
           </a>
-          <Link to="/login">
-            <NavItem className="right">登录</NavItem>
-          </Link>
+          {/*<Link to="/login">*/}
+          {/*  <NavItem className="right">登录</NavItem>*/}
+          {/*</Link>*/}
+          {renderLogin()}
           <NavItem className="right">Aa</NavItem>
           <SearchWrapper>
             <NavSearch
@@ -77,6 +93,7 @@ const mapStateToProps = (state) => {
     page: state.header.get("page"),
     totalPage: state.header.get("totalPage"),
     mouseEnter: state.header.get("mouseEnter"),
+    loginStatus: state.login.get("loginStatus")
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -99,6 +116,10 @@ const mapDispatchToProps = (dispatch) => {
       page < totalPage
           ? dispatch(changePage(page + 1))
           : dispatch(changePage(1));
+    },
+    loginOut(){
+      message.warn("logout success ~");
+      dispatch(logoutAccount());
     }
   }
 }
